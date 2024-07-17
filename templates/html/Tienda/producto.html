@@ -1,0 +1,10 @@
+{% extends 'menuComponent.html' %}
+{% load static %}
+
+{% block content %}
+    {% for producto in productos %}
+        nombre:{{ producto.nombre_producto }}
+        <img src="{{ producto.imagen.url }}" alt="">
+        <a href="/shopp/facturar/{{ producto.ID_producto }}">comprar</a>
+    {% endfor %}
+{% endblock %}

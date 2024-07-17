@@ -1,0 +1,35 @@
+{% extends 'menuComponent.html' %}
+{% load static %}
+
+{% block content %}
+<section class="form" height="20rem" align="center">
+    <div class="modal-dialog text-center">
+        <div class="col-sm-8 carta">
+            <div class="modal-content card text-bg-dark mb-3">
+                <br>
+                <form class="col-12" method="post">
+
+                    {% csrf_token %}
+                    <div class="row">
+
+                        <br><br><br>
+                        <div class="form-group">
+                            <input type="text" required placeholder="ejemplo@gmail.com" class="form-control"
+                                   name="username">
+                        </div>
+                        <br><br><br>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Contraseña" name="password">
+                        </div>
+                        <br><br><br>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn">Iniciar Sesión</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

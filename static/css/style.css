@@ -1,0 +1,86 @@
+.py-5{
+    background-color: #0f0f0f;
+    padding-top: 0!important;
+    }
+    
+    .fa-solid:hover{
+    
+        color: cornflowerblue;
+    }
+    .container{
+        
+        width: fit-content!important;
+        padding-top: 2rem;
+        display: flex;
+    }
+    
+    .card{
+        margin-left: 0.5rem;
+        padding-top: 1.25rem;
+    }
+    .section-header a{
+        width: 110px; /* Para que no se rompa en dos líneas, y lo translade tal cual. */
+        margin-left: 50%;
+        transform: translateX(-50%);
+        border:1px solid;
+        
+    }
+    
+    .page-width{
+        margin-top: 2rem;
+    }
+    .background-sub{
+        width: 100%;
+        height: 20rem;
+        background-color: #0f0f0f;
+    }
+    .suscripcion{
+        margin-top: 2rem;
+    }
+    .sub-title{
+        padding-top: 2rem;
+    }
+    .sub-email{
+        width: 20%;
+        margin-left: 40%!important;
+        padding-top: 2%;
+        padding: auto!important;
+    }
+    .section-header h2{
+        padding-top: 2rem;
+    }
+    .display-5{
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    .qual{
+        width: 18rem;
+        margin-left: 0.5rem;
+    }
+    .qual-img{
+        padding-top: 1rem;
+    }
+    .section-qual{
+        margin-bottom: 4rem;
+    }
+    .nav-link:hover{
+        color: cornflowerblue !important;;
+    }
+    .fa-solid:hover{
+        color: cornflowerblue!important;
+    }
+    .fa-solid{
+        margin-left: 1rem;
+    }
+    .fs-3{
+        display:inline-block;
+    }
+    .pp{
+        width: 63rem; 
+     }
+    .pb{
+        margin-bottom: 1.25rem;
+        position:absolute;
+        bottom: 0;
+    }
+    

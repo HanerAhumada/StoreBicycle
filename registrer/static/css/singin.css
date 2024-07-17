@@ -1,0 +1,27 @@
+.carta {
+    margin-left: auto;
+    margin-right: auto;
+}
+#navbarScroll{
+    justify-content: end;
+}
+.user-icon{
+    margin-left: 1rem;
+}
+
+.form-control{
+    margin: auto;
+}
+.carta{
+    margin-left: auto;
+    margin-right: auto;
+}
+.modal-dialog{
+    margin-top: 10rem;
+}
+.fa-solid:hover{
+    color: cornflowerblue!important;;
+}
+.nav-link:hover{
+    color: cornflowerblue !important;;
+}

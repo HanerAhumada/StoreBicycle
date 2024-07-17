@@ -1,0 +1,97 @@
+{% extends 'menuComponent.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+
+
+        <section class="py-5">
+            <div class="row py-lg-5 banner">
+                <img class="banner_image" src="{% static 'recursos/banner.png' %}" alt="">
+            </div>
+        </section>
+
+        <div class="page-width">
+            <div class="section-header">
+                <h1 class="display-6 text-center"><strong>destacados</strong></h1>
+                <a href="/collections/destacados" class="btn btn--secondary btn--small section-header__link">Todos</a>
+            </div>
+        </div>
+
+        <section class="container">
+            <div class="row pp">
+                {% for producto in productos %}
+                    {% if producto.calificacion >= 4 %}
+                        <div class="card" style="width: 18rem;">
+                            <img src="{{ producto.imagen.url }}" class="card-img-top" alt="bicicleta electrica"
+                                 style="max-width: 300px;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ producto.nombre_producto }}</h5>
+                                <p class="card-text">{{ producto.descripcion }}</p>
+                                <a href="" class="btn btn-primary pb">ver más información</a>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="suscripcion">
+            <div class="background-sub">
+                <div class="sub-title">
+                    <h1 class="card-title text-light justify-content-center">Suscribete</h1>
+                    <p class="card-text text-light justify-content-center" align="center">Para recibir ofertas y descuentos</p>
+                    <div class="sub-email">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                            <input type="text" class="form-control" placeholder="Correo Electronico"
+                                   aria-label="Username"
+                                   aria-describedby="basic-addon1" width="30%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <h1 class="display-5 text-center"><strong>zapatillas</strong></h1>
+        <section class="container">
+            <div class="row pp">
+                {% for producto in productos %}
+                    {% if producto.category == 'zapatillas' %}
+                        <div class="card" style="width: 18rem;">
+                            <img src="{{ producto.imagen.url }}" class="card-img-top" alt="zapatillas">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ producto.nombre_producto }}</h5>
+                                <p class="card-text">{{ producto.descripcion }}</p>
+                                <a href="" class="btn btn-primary">ver mas informacion</a>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            {% if request.user.is_authenticated %}
+                </section>
+                {% if recurrentes %}
+                    <h1 class="display-5 text-center"><strong>tus ultimas compras</strong></h1>
+                {% endif %}
+                <section class="container">
+                    <div class="row pp">
+                        {% for prod in recurrentes %}
+                            <div class="card" style="width: 18rem;">
+                                <img src="{{ prod.imagen.url }}" class="card-img-top" alt="bicicleta electrica"
+                                     style="max-width: 300px; max-height: 300px;">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ prod.nombre_producto }}</h5>
+                                    <p class="card-text">Gafas de Downhill ,BMX o Enduro, que proporcionan una claridad
+                                        brillante y una buena visión de colores</p>
+                                    <a href="#" class="btn btn-primary">ver más información</a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </section>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

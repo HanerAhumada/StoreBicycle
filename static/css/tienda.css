@@ -1,0 +1,51 @@
+body {
+    background-color: #F8F9FA;
+}
+
+label {
+    margin-left: 15px;
+}
+
+h1 {
+    margin-left: 12px;
+}
+.card{
+    display: inline-flex;
+    margin-left: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+.carta {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carrito {
+    margin-top: 15px;
+}
+
+.nav-link:hover{
+    color: cornflowerblue !important;;
+}
+.fa-solid:hover{
+    color: cornflowerblue!important;
+}
+.fa-solid{
+    margin-left: 1rem;
+    color: white;
+}
+
+li {
+    color: cornflowerblue !important;;
+}
+.cc{
+    margin-left: auto;
+    margin-right: auto;
+    width: 59rem;
+}
+.card-img-top{
+    width: 18rem;
+    height: 14rem;
+}
+.container{
+    padding: auto;
+}

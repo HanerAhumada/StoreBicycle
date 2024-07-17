@@ -1,0 +1,90 @@
+{%  load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sing in-GW PARTS</title>
+     <!-- CSS only -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+     <!-- JavaScript Bundle with Popper -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+     <!-- FRAMEWORK BOOTSTRAP -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" href="{% static 'css/comprar.css' %}">
+     <script src="https://kit.fontawesome.com/8bc46edd81.js" crossorigin="anonymous"></script>
+     <link rel="shortcut icon" href="{% static 'recursos/ISOTIPO_Mesa_de_trabajo_1_x50@2x.webp' %}" />
+     
+     
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="collapse navbar-collapse">
+          <a href="/static"><img src="../recursos/332150.svg" height="24" alt=""></a>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav mr-auto" style="--bs-scroll-height: 100px;">
+              <li class="user-icon"><a href="#"><i class="fa-solid fa-user text-light" height="30"></i></a></li>
+            </ul>
+            <ul class="nav justify-content-center mr-auto">
+                <li class="nav-item">
+                    <span class="navbar-text"><a class="nav-link active" href="tienda">Bicicletas</a></span>
+                  </li>
+                  <li class="nav-item">
+                    <span class="navbar-text"><a class="nav-link active" href="#">Accesorios</a></span>
+                  </li>
+            </ul>
+            <ul class="nav justify-content-end">
+              <li class="nav-item">
+                <span class="navbar-text"><a class="nav-link active" href="carrito"><i class="fa-solid fa-cart-shopping" height="30"></i></a></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <main>
+        <br><br>
+        <h2 class="h2" align="center"> APARTADO DE COMPRA</h2>
+        <div class="modal-dialog text-center">
+            <div class="col-sm-8 carta">
+                <div class="modal-content card text-bg-dark mb-3">
+                    <br>
+                    <form class="col-12" method="post" align="">
+                      {% csrf_token %}
+                        <div class="row">
+                            <div class="form-group col">
+                              <input type="text" id="" required placeholder="Nombre" class="form-control" name="nombre">
+                          </div>
+                          <div class="form-group col">
+                            <input type="text" id="" required placeholder="Apellido" class="form-control" name="apellido">
+                          </div>
+                            <br><br><br>
+                            <div class="form-group">
+                              <input type="email" required placeholder="ejemplo@gmail.com" class="form-control" name="correo">
+                            </div>
+                            <br><br><br>
+                              <div class="form-group">
+                                <input type="tel" class="form-control" placeholder="telefono" name="telefono">
+                              </div>
+                              <br><br><br>
+                              <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Ciudad" name="ciudad">
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" placeholder="direccion" name="direccion">
+                              </div>
+                              
+                              <br><br><br>
+                              <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn">Comprar</button>
+                              </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+      </main>
+</body>
+</html>

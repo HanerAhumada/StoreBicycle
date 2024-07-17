@@ -1,0 +1,92 @@
+{% extends 'menuComponent.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="cart-title">
+            <h2 class="h1" align="center">Carrito de Compra</h2>
+            <figure class="text-center">
+                <blockquote class="blockquote">
+                    <br>
+                    <p>Continue explorando <a href="{% url 'homepage' %}">aqui</a></p>
+                </blockquote>
+            </figure>
+        </div>
+
+
+        {% if request.session.carro.items %}
+            <div class="table-title">
+                <p><b>Cantidad</b></p>
+                <p><b>Precio</b></p>
+            </div>
+            <hr class="one">
+            {% for key, value in request.session.carro.items %}
+                <section class="products">
+                    <div class="prod">
+                        <div class="prod-logo">
+                            <img src="{{ value.imagen }}" alt="bicicleta electrica" width="100%">
+                        </div>
+                        <div class="prod-nom">
+                            <h2>{{ value.producto }}</h2>
+                            <button type="button" class="btn btn-danger"><a
+                                    href="{% url 'carro:eliminar' key %}">eliminar</a>
+                            </button>
+                            <button type="button" class="btn btn-danger"><a
+                                    href="{% url 'carro:restar' key %}">restar</a></button>
+                            <button type="button" class="btn btn-success"><a
+                                    href="{% url 'carro:agregar' key %}">agregar</a>
+                            </button>
+                        </div>
+                        <div class="prod-info">
+                            <div class="cant">
+                                <p align="center"><b> {{ value.cantidad }}</b></p>
+                            </div>
+                            <div class="precio">
+                                <p align="center"><b>{{ value.precio_actual }}</b></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            {% endfor %}
+
+            <section>
+                <hr class="one">
+                <div class="buy-section">
+                    <div class="contenedor-t-c">
+                        <div class="cart-btn">
+                            <div class="box-botones">
+                                <div>
+                                    <button type="button" class="btn btn-danger"><a href="{% url 'carro:limpiar' %}">limpiar
+                                        Carrito</a></button>
+                                </div>
+
+                                <div>
+                                    <a href="{% url 'shopp:comprar' %}">
+                                        <button type="submit" class="btn btn-success">Comprar</button>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="cart-text">
+                            <div class="contenedor-text">
+                                <div class="s-t">
+                                    <p align="center"><b>subtotal</b></p>
+                                </div>
+                                <div class="price">
+                                    <p align="center"><b>0</b></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% else %}
+            <br><br><br><br>
+            <center><h2 align="center" class="fs-3">¡¡Upss!!, parece que aún no has agregado nada a tu carrito</h2>
+            </center>
+        {% endif %}
+    </div>
+{% endblock %}

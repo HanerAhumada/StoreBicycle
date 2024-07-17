@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+</head>
+<body>
+    <!-- Archivo base -->
+    <h1>Bienvenido Usuario</h1>
+    <!-- No tocar código necesario para la funcionalidad el login, o lo deben mover con la interfaz
+    que será la principal, para dudas:"https://www.youtube.com/watch?v=2DMcFLjRm3g&t=34s&ab_channel=moisessepulveda"-->
+    {%if user.is_authenticated %}
+    <li>
+        <p>Esta en su perfil</p>
+        <a href="{% url 'logout' %}">Cerrar Sesion</a>
+    </li>
+    <li>
+        <h3>Bienvenido </h3>
+        <a href="#">{{ user.username }}</a>
+    </li>
+
+    {% else %}
+
+    <li>
+        <p>Loguese por favor</p>
+        <a href="{% url 'login' %}">Iniciar Sesion</a>
+    </li>
+
+    {% endif %}
+    <!-- No tocar-->
+
+</body>
+</html>
