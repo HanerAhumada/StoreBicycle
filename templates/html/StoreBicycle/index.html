@@ -25,7 +25,7 @@
                     {% if producto.calificacion >= 4 %}
                         <div class="card" style="width: 18rem;">
                             <img src="{{ producto.imagen.url }}" class="card-img-top" alt="bicicleta electrica"
-                                 style="max-width: 300px;">
+                                 style="max-width: 300px;" height="150">
                             <div class="card-body">
                                 <h5 class="card-title">{{ producto.nombre_producto }}</h5>
                                 <p class="card-text">{{ producto.descripcion }}</p>
@@ -40,10 +40,10 @@
         <section class="suscripcion">
             <div class="background-sub">
                 <div class="sub-title">
-                    <h1 class="card-title text-light justify-content-center">Suscribete</h1>
-                    <p class="card-text text-light justify-content-center" align="center">Para recibir ofertas y descuentos</p>
-                    <div class="sub-email">
-                        <div class="input-group mb-3">
+                    <h1 class="card-title text-light">Suscribete</h1>
+                    <p class="card-text text-light">Para recibir ofertas y descuentos</p>
+                    <div style="width: 20%">
+                        <div class="input-group" style="width: 300px">
                             <span class="input-group-text" id="basic-addon1">@</span>
                             <input type="text" class="form-control" placeholder="Correo Electronico"
                                    aria-label="Username"
@@ -55,12 +55,12 @@
         </section>
 
         <h1 class="display-5 text-center"><strong>zapatillas</strong></h1>
-        <section class="container">
+        <section class="container productos">
             <div class="row pp">
                 {% for producto in productos %}
                     {% if producto.category == 'zapatillas' %}
                         <div class="card" style="width: 18rem;">
-                            <img src="{{ producto.imagen.url }}" class="card-img-top" alt="zapatillas">
+                            <img src="{{ producto.imagen.url }}" class="card-img-top" alt="zapatillas" height="150">
                             <div class="card-body">
                                 <h5 class="card-title">{{ producto.nombre_producto }}</h5>
                                 <p class="card-text">{{ producto.descripcion }}</p>
@@ -70,8 +70,9 @@
                     {% endif %}
                 {% endfor %}
             </div>
+        </section>
+
             {% if request.user.is_authenticated %}
-                </section>
                 {% if recurrentes %}
                     <h1 class="display-5 text-center"><strong>tus ultimas compras</strong></h1>
                 {% endif %}

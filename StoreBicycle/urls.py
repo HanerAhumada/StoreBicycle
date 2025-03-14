@@ -10,7 +10,7 @@ from StoreBicycle.views import homepage
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homepage,name='homepage'),
-    path("register/", include('registrer.urls', namespace='register')),
+    path("register/", include('registrer.urls', namespace='registrer')),
     path('tienda/',include('tienda.urls',namespace='shopping')),
     path('carro/',include('carro.urls', namespace='carro')),
     path('shopp/',include('shopp.urls', namespace='shopp')),

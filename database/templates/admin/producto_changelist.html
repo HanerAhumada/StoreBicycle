@@ -2,11 +2,11 @@
 
 {% block content %}
 <div>
-    <h2>Subir archivo Excel</h2>
+    <h2>Subir archivo Excel Productos</h2>
     <form method="post" enctype="multipart/form-data" action="{% url 'admin:upload_excel' %}">
         {% csrf_token %}
         {{ upload_form.as_p }}
-        <button type="submit" class="button">Cargar</button>
+        <button type="submit" class="button">Cargar Productos</button>
     </form>
 </div>
 {{ block.super }}

@@ -8,51 +8,52 @@
 
     <div class="container-fluid">
         <div class="row">
+            <!-- Filtros -->
             <div class="col-md-3">
-                <div class="card" style="padding: 0px">
+                <div class="card">
                     <div class="card-header">
                         <h5>Filtros</h5>
                     </div>
                     <div class="card-body">
-                        <div class="container-fluid">
-
-                            <form method="POST">
-                                {% csrf_token %}
-                                <div class="row">
-                                    {% for field in filtro %}
-                                        <h6>{{ field.label }}</h6>
-                                        {{ field }}
-                                    {% endfor %}
-                                    <button type="submit">Buscar</button>
+                        <form method="POST" class="d-grid gap-2">
+                            {% csrf_token %}
+                            {% for field in filtro %}
+                                <div class="mb-2">
+                                    <label class="form-label">{{ field.label }}</label>
+                                    {{ field }}
                                 </div>
-                            </form>
-
-                        </div>
+                            {% endfor %}
+                            <button type="submit" class="btn btn-primary">Buscar</button>
+                        </form>
                     </div>
                 </div>
             </div>
+
+            <!-- Productos -->
             <div class="col-md-9">
-                <div class="container-fluid">
-                    <div class="row">
-                        {% for producto in products %}
-                            <div class="card col-md-2" style="margin-bottom: 10px">
-                                <img src="{{ producto.imagen.url }}" class="card-img-top" height="150" alt="...">
-                                <div class="card-body">
+                <div class="row">
+                    {% for producto in products %}
+                        <div class="col-md-3 mb-3">
+                            <div class="card h-100">
+                                <img src="{{ producto.imagen.url }}" class="card-img-top" height="150" alt="Imagen del producto">
+                                <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">{{ producto.nombre_producto }}</h5>
-                                    <p>{{ producto.descripcion }}</p>
-                                    <span>{{ producto.precio_unitario }}</span><br/>
-                                    <a href="{% url 'shopping:producto' producto.ID_producto %}"
-                                       class="btn btn-secondary"><i class='fas fa-eye'></i></a>
-                                    <a href="{% url 'carro:agregar' producto.ID_producto %}" class="btn btn-primary">
-                                        <i class="fa fa-cart-plus"></i>
-                                    </a>
+                                    <p class="card-text flex-grow-1">{{ producto.descripcion }}</p>
+                                    <span class="fw-bold">${{ producto.precio_unitario }}</span>
+                                    <div class="mt-2 d-flex justify-content-between">
+                                        <a href="{% url 'shopping:producto' producto.ID_producto %}" class="btn btn-secondary btn-sm">
+                                            <i class='fas fa-eye'></i>
+                                        </a>
+                                        <a href="{% url 'carro:agregar' producto.ID_producto %}" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-cart-plus"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        {% endfor %}
-                    </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
     </div>
-
 {% endblock %}

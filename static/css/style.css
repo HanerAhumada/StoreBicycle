@@ -30,22 +30,27 @@
         margin-top: 2rem;
     }
     .background-sub{
-        width: 100%;
         height: 20rem;
-        background-color: #0f0f0f;
+
     }
     .suscripcion{
         margin-top: 2rem;
+        display: flex;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        background-color: #0f0f0f;
     }
+    .productos{
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+    }
+
     .sub-title{
         padding-top: 2rem;
     }
-    .sub-email{
-        width: 20%;
-        margin-left: 40%!important;
-        padding-top: 2%;
-        padding: auto!important;
-    }
+
     .section-header h2{
         padding-top: 2rem;
     }

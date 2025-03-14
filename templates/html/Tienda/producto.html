@@ -4,7 +4,7 @@
 {% block content %}
     {% for producto in productos %}
         nombre:{{ producto.nombre_producto }}
-        <img src="{{ producto.imagen.url }}" alt="">
+        <img src="{{ producto.imagen.url }}" alt="" width="200">
         <a href="/shopp/facturar/{{ producto.ID_producto }}">comprar</a>
     {% endfor %}
 {% endblock %}

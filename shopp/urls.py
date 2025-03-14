@@ -1,8 +1,7 @@
-import imp
-from django.urls import path, include
+from django.urls import path
 from .views import *
-from shopp import views
-app_name='shopp'
-urlpatterns=[
-    path('',registrarCompras,name='comprar'),
+
+app_name = 'shopp'
+urlpatterns = [
+    path('', registrarCompras, name='comprar'),
 ]
